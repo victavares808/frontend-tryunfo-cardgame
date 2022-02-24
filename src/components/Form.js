@@ -96,17 +96,15 @@ class Form extends React.Component {
             data-testid="trunfo-input"
           />
         </label>
-        <label htmlFor="save-button">
-          <button
-            id="save-button"
-            disabled={ isSaveButtonDisabled }
-            onClick={ onSaveButtonClick }
-            type="submit"
-            data-testid="save-button"
-          >
-            Salvar
-          </button>
-        </label>
+        <button
+          id="save-button"
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
+          type="submit"
+          data-testid="save-button"
+        >
+          Salvar
+        </button>
       </form>
     );
   }
