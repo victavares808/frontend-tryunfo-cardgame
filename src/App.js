@@ -5,74 +5,25 @@ import Card from './components/Card';
 class App extends React.Component {
   constructor() {
     super();
-
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.button = this.button.bind(this);
-
     this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: '',
+      cardName:" ",
+      cardDescription:" ",
+      cardAttr1:"0",
+      cardAttr2:"0",
+      cardAttr3:"0",
+      cardImage:" ",
+      cardRare:" ",
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     };
   }
 
-  onSaveButtonClick() {
-    this.setState(() => ({
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: '',
-      cardTrunfo: false,
-      isSaveButtonDisabled: true,
-    }));
-  }
-
-  onInputChange({ target }) {
+  onInputChange(target) {
     const { name } = target;
     const valor = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: valor,
-    }, () => this.button(valor));
-  }
-
-  button(value) {
-    const { cardAttr1, cardAttr2, cardAttr3, isSaveButtonDisabled } = this.state;
-    const ninety = 90;
-    const cardAtt1 = parseInt(cardAttr1, 10);
-    const cardAtt2 = parseInt(cardAttr2, 10);
-    const cardAtt3 = parseInt(cardAttr3, 10);
-    const twohund = 210;
-    const zero = 0;
-    const bool = this.setState({
-      isSaveButtonDisabled: true,
     });
-    if (value.length === 0 && isSaveButtonDisabled === false) {
-      this.setState({
-        isSaveButtonDisabled: true,
-      });
-    } else if ((cardAtt1 > ninety) || (cardAttr1 < zero)) {
-      return bool;
-    } else if ((cardAtt2 > ninety) || (cardAtt2 < zero)) {
-      return bool;
-    } else if ((cardAtt3 > ninety) || (cardAtt3 < zero)) {
-      return bool;
-    } else if ((cardAtt1 + cardAtt2 + cardAtt3) > twohund) {
-      return bool;
-    } else {
-      this.setState({
-        isSaveButtonDisabled: false,
-      });
-    }
   }
 
   render() {
