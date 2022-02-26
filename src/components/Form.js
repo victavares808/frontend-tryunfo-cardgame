@@ -12,7 +12,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      /* hasTrunfo, */
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -36,7 +36,6 @@ class Form extends React.Component {
             data-testid="description-input"
           >
             <placeholder>Description</placeholder>
-
           </textarea>
         </label>
         <label htmlFor="attr1-input">
@@ -118,9 +117,10 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  hasTrunfo: PropTypes.bool.isRequired,
+  /* hasTrunfo: PropTypes.bool.isRequired, */
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
 };
+
 export default Form;
