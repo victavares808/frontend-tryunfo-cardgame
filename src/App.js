@@ -3,7 +3,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 
 class App extends React.Component {
-/*   constructor() {
+  constructor() {
     super();
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -44,15 +44,16 @@ class App extends React.Component {
       [name]: valor,
     }, () => this.button(valor));
   }
+
   button(value) {
     const { cardAttr1, cardAttr2, cardAttr3, isSaveButtonDisabled } = this.state;
     const ninety = 90;
     const cardAtt1 = parseInt(cardAttr1, 10);
     const cardAtt2 = parseInt(cardAttr2, 10);
     const cardAtt3 = parseInt(cardAttr3, 10);
-    const duz = 210;
+    const twohund = 210;
     const zero = 0;
-    const p = this.setState({
+    const bool = this.setState({
       isSaveButtonDisabled: true,
     });
     if (value.length === 0 && isSaveButtonDisabled === false) {
@@ -60,19 +61,19 @@ class App extends React.Component {
         isSaveButtonDisabled: true,
       });
     } else if ((cardAtt1 > ninety) || (cardAttr1 < zero)) {
-      return p;
+      return bool;
     } else if ((cardAtt2 > ninety) || (cardAtt2 < zero)) {
-      return p;
+      return bool;
     } else if ((cardAtt3 > ninety) || (cardAtt3 < zero)) {
-      return p;
-    } else if ((cardAtt1 + cardAtt2 + cardAtt3) > duz) {
-      return p;
+      return bool;
+    } else if ((cardAtt1 + cardAtt2 + cardAtt3) > twohund) {
+      return bool;
     } else {
       this.setState({
         isSaveButtonDisabled: false,
       });
     }
-  } */
+  }
 
   render() {
     const {
@@ -84,16 +85,14 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-   /*    isSaveButtonDisabled, */
+      isSaveButtonDisabled,
     } = this.state;
 
     return (
       <div>
         <h1>Tryunfo</h1>
-        <Form />
-        <Card />
         <Form
-          /* cardName={ cardName }
+          cardName={ cardName }
           cardDescription={ cardDescription }
           cardAttr1={ cardAttr1 }
           cardAttr2={ cardAttr2 }
@@ -103,7 +102,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick } */
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
 
         <Card
