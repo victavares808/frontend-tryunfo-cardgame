@@ -22,6 +22,7 @@ class Form extends React.Component {
         <label htmlFor="name-input">
           <input
             id="name-input"
+            name="cardName"
             type="text"
             value={ cardName }
             onChange={ onInputChange }
@@ -31,16 +32,16 @@ class Form extends React.Component {
         <label htmlFor="description-input">
           <textarea
             id="description-input"
+            name="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
             data-testid="description-input"
-          >
-            <placeholder>Description</placeholder>
-          </textarea>
+          />
         </label>
         <label htmlFor="attr1-input">
           <input
             id="attr1-input"
+            name="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
             type="number"
@@ -50,6 +51,7 @@ class Form extends React.Component {
         <label htmlFor="attr2-input">
           <input
             id="attr2-input"
+            name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
             type="number"
@@ -59,6 +61,7 @@ class Form extends React.Component {
         <label htmlFor="attr3-input">
           <input
             id="attr3-input"
+            name="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
             type="number"
@@ -68,6 +71,7 @@ class Form extends React.Component {
         <label htmlFor="image-input">
           <input
             id="image-input"
+            name="cardImage"
             value={ cardImage }
             onChange={ onInputChange }
             type="text"
@@ -77,6 +81,7 @@ class Form extends React.Component {
         <label htmlFor="select">
           <select
             id="select"
+            name="cardRare"
             value={ cardRare }
             onChange={ onInputChange }
             data-testid="rare-input"
@@ -90,6 +95,7 @@ class Form extends React.Component {
           <input
             type="checkbox"
             id="trunfo-input"
+            name="cardTrunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
             data-testid="trunfo-input"

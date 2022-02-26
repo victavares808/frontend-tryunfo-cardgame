@@ -5,20 +5,37 @@ import Card from './components/Card';
 class App extends React.Component {
   constructor() {
     super();
+
+    this.onInputChange = this.onInputChange.bind(this);
+
     this.state = {
-      cardName:" ",
-      cardDescription:" ",
-      cardAttr1:"0",
-      cardAttr2:"0",
-      cardAttr3:"0",
-      cardImage:" ",
-      cardRare:" ",
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     };
   }
 
-  onInputChange(target) {
+  onSaveButtonClick() {
+    this.setState(() => ({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+  }
+
+  onInputChange({ target }) {
     const { name } = target;
     const valor = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
