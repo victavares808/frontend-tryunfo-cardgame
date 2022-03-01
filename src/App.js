@@ -20,11 +20,30 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      hasTrunfo: false,
+      saveCards: [],
     };
   }
 
   onSaveButtonClick() {
-    this.setState(() => ({
+    const {
+      cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo, /* saveCards */
+    } = this.state;
+
+    this.setState((prevState) => ({
+      saveCards: [...prevState.saveCards,
+        {
+          cardName,
+          cardDescription,
+          cardRare,
+          cardAttr1,
+          cardAttr2,
+          cardAttr3,
+          cardImage,
+          cardTrunfo,
+        },
+      ],
       cardName: '',
       cardDescription: '',
       cardAttr1: '0',
@@ -32,9 +51,11 @@ class App extends React.Component {
       cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
-      cardTrunfo: true,
-      isSaveButtonDisabled: true,
+      cardTrunfo: false,
     }));
+    if (cardTrunfo === true) {
+      this.setState({ hasTrunfo: true });
+    }
   }
 
   onInputChange({ target }) {
@@ -43,6 +64,14 @@ class App extends React.Component {
     this.setState({
       [name]: valor,
     }, () => this.button(valor));
+  }
+
+  xibalba() {
+    const { saveCards } = this.state;
+    const newCards = saveCards.some((element) => element.cardTrunfo === true);
+    this.setState({
+      hasTrunfo: newCards,
+    });
   }
 
   button(value) {
