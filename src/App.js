@@ -16,7 +16,7 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardImage: 'url-to-image',
+      cardImage: '',
       cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
@@ -30,9 +30,9 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardImage: 'url-to-image',
-      cardRare: '',
-      cardTrunfo: false,
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: true,
       isSaveButtonDisabled: true,
     }));
   }
@@ -47,12 +47,12 @@ class App extends React.Component {
 
   button(value) {
     const { cardAttr1, cardAttr2, cardAttr3, isSaveButtonDisabled } = this.state;
+    const zero = 0;
     const noventa = 90;
     const cardAtt1 = parseInt(cardAttr1, 10);
     const cardAtt2 = parseInt(cardAttr2, 10);
     const cardAtt3 = parseInt(cardAttr3, 10);
     const duz = 210;
-    const zero = 0;
     const p = this.setState({
       isSaveButtonDisabled: true,
     });
@@ -85,6 +85,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
 
@@ -100,6 +101,7 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
@@ -113,6 +115,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardImage={ cardImage }
           cardRare={ cardRare }
+          hasTrunfo={ hasTrunfo }
           cardTrunfo={ cardTrunfo }
         />
       </div>
