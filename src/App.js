@@ -31,8 +31,8 @@ class App extends React.Component {
       cardImage, cardRare, cardTrunfo, saveCards,
     } = this.state;
 
-    this.setState((prevState) => ({
-      saveCards: [...prevState.saveCards,
+    this.setState(() => ({
+      saveCards: [...saveCards,
         {
           cardName,
           cardDescription,
@@ -52,10 +52,11 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
-    }));
-    if (cardTrunfo === true) {
-      this.setState({ hasTrunfo: true });
-    }
+    }),
+    () => this.chiuaua());
+    /*  if (cardTrunfo === true) {
+      this.setState(() => ({ hasTrunfo: true }));
+    } */
   }
 
   onInputChange({ target }) {
